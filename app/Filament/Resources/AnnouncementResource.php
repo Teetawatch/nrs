@@ -44,8 +44,8 @@ class AnnouncementResource extends Resource
                 Tables\Columns\TextColumn::make('type')
                     ->label('ประเภท')
                     ->badge()
-                    ->color(fn ($s) => match ($s) { 'info' => 'info', 'warning' => 'warning', 'danger' => 'danger', default => 'success' })
-                    ->formatStateUsing(fn ($s) => match ($s) { 'info' => 'ข้อมูล', 'warning' => 'แจ้งเตือน', 'danger' => 'สำคัญ', default => 'สำเร็จ' }),
+                    ->color(fn ($state) => match ($state) { 'info' => 'info', 'warning' => 'warning', 'danger' => 'danger', default => 'success' })
+                    ->formatStateUsing(fn ($state) => match ($state) { 'info' => 'ข้อมูล', 'warning' => 'แจ้งเตือน', 'danger' => 'สำคัญ', default => 'สำเร็จ' }),
                 Tables\Columns\TextColumn::make('expired_at')->label('หมดอายุ')->dateTime('d/m/Y H:i')->sortable(),
                 Tables\Columns\ToggleColumn::make('is_active')->label('เปิดใช้งาน'),
                 Tables\Columns\TextColumn::make('created_at')->label('สร้างเมื่อ')->dateTime('d/m/Y')->sortable(),

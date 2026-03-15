@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ข่าวประชาสัมพันธ์ - กองทัพเรือ</title>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Thai Font: Prompt is a popular modern sans-serif for Thai -->
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style data-purpose="typography">
+    body {
+      font-family: 'Prompt', sans-serif;
+    }
+  </style>
+<style data-purpose="custom-colors">
+    :root {
+      --navy-dark: #1a2a4e;
+      --gold-accent: #d4a035;
+      --text-muted: #6b7280;
+    }
+    .bg-navy-dark { background-color: var(--navy-dark); }
+    .text-navy-dark { color: var(--navy-dark); }
+    .bg-gold-accent { background-color: var(--gold-accent); }
+    .text-gold-accent { color: var(--gold-accent); }
+    .border-gold-accent { border-color: var(--gold-accent); }
+  </style>
+</head>
+<body class="bg-gray-50 text-slate-800">
+<!-- BEGIN: MainHeader -->
+<header class="py-10 bg-white" data-purpose="site-header">
+<div class="container mx-auto px-4 flex flex-col items-center">
+<!-- Logo and Site Title -->
+<div class="flex items-center gap-3">
+<!-- Placeholder for Anchor Logo -->
+<svg class="w-10 h-10 text-navy-dark" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 2c-.55 0-1 .45-1 1v1.1c-1.35.21-2.48 1.13-2.91 2.39L6.5 12H4v2h2.2l.8 4c.11.55.59.94 1.15.94h7.7c.56 0 1.04-.39 1.15-.94l.8-4H20v-2h-2.5l-1.59-5.51C15.48 4.23 14.35 3.31 13 3.1V3c0-.55-.45-1-1-1zm0 2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-3.41 3.5c.19-.58.74-1 1.41-1h2c.67 0 1.22.42 1.41 1L14.71 12H9.29L7.59 7.5zM8.35 17l-.4-2h8.1l-.4 2H8.35z"></path>
+</svg>
+<h1 class="text-3xl font-semibold text-navy-dark tracking-wide">ข่าวประชาสัมพันธ์</h1>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: FeaturedSection -->
+<section class="relative" data-purpose="hero-news">
+<!-- Blue Background Split for Visual Interest -->
+<div class="absolute inset-0 h-1/2 bg-white"></div>
+<div class="absolute inset-x-0 bottom-0 h-1/2 bg-navy-dark"></div>
+<div class="container mx-auto px-4 relative z-10 pb-12">
+<!-- Header Row -->
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-xl font-medium text-navy-dark">ข่าวเด่น</h2>
+<a class="bg-gold-accent text-white px-6 py-2 rounded-full flex items-center gap-2 hover:bg-opacity-90 transition-all text-sm" href="#">
+          ดูทั้งหมด
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+<!-- Main Featured Card -->
+<div class="bg-white rounded-lg shadow-xl overflow-hidden flex flex-col md:flex-row">
+<!-- Large Image -->
+<div class="md:w-3/5 relative">
+<img alt="ผู้บัญชาการทหารเรือ" class="w-full h-full object-cover aspect-[4/3]" src=""/>
+</div>
+<!-- Featured Content -->
+<div class="md:w-2/5 p-8 flex flex-col justify-center">
+<h3 class="text-2xl font-semibold text-navy-dark leading-snug mb-6">
+            ผู้บัญชาการทหารเรือเป็นประธานในพิธีเปิดการอบรมหลักสูตรพัฒนาสัมพันธ์ระดับผู้บริหารกองทัพเรือ รุ่นที่ ๒๓ ประจำปีงบประมาณ ๒๕๖๙
+          </h3>
+<div class="flex items-center gap-6 text-gray-500 text-sm">
+<span class="flex items-center gap-1">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+              12.03.2569
+            </span>
+<span class="flex items-center gap-1">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+              52 Views
+            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: FeaturedSection -->
+<!-- BEGIN: MainContentGrid -->
+<main class="bg-navy-dark pb-24" data-purpose="secondary-news-grid">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<!-- BEGIN: ImportantNews -->
+<section>
+<div class="flex justify-between items-center mb-8 border-b border-gray-700 pb-4">
+<h2 class="text-2xl font-medium text-white">ข่าวสำคัญ</h2>
+<a class="bg-gold-accent text-white px-4 py-1.5 rounded-full flex items-center gap-2 hover:bg-opacity-90 transition-all text-xs" href="#">
+              ดูทั้งหมด
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- News Card 1 -->
+<article class="flex flex-col group cursor-pointer">
+<div class="rounded-lg overflow-hidden mb-3 aspect-[16/9]">
+<img alt="News Image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoS4OknQXv7zLnsnSkVz-flNyRuRqYCsG8m4t5VDYET-bOY58nv7lCLAtL9mEObmOh4Da5eM1Yb17jjSUOHz5Xuq3IQ_rAnMuOnqvFx_03HxKbzptSOTgINiNJeirgegHzKj10n4s0iPzubtaQDT7YSEXTgKx__nflAoRD2sC_YCvlUWUv7N89WlyHbgCVgNi27d17z4vFb5-6WMV84uF-xMDaiWUmqZKHzF8HbEKQDNPEiFxTuhIaZ1gPNbQFkW61uD8A9RbX9Ec"/>
+</div>
+<h4 class="text-white text-sm font-light leading-relaxed mb-3 line-clamp-2">ผู้บัญชาการกองทัพเรือภาคที่ ๓ แถลงข่าวการจับกุมเรือประมงต่างชาติที่รุกล้ำเข้ามาทำการประมงในน่านน้ำไทย</h4>
+<div class="flex items-center gap-4 text-gray-400 text-xs mt-auto">
+<span class="flex items-center gap-1"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg> 12.03.2569</span>
+<span class="flex items-center gap-1"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg> 22 Views</span>
+</div>
+</article>
+<!-- News Card 2 -->
+<article class="flex flex-col group cursor-pointer">
+<div class="rounded-lg overflow-hidden mb-3 aspect-[16/9]">
+<img alt="News Image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPKLCuuqs3m7Fvb4f6UUBUL2DLpCbeQLRdYIdKHNyqxEcsVUIt_JjFZ515JUZnBjVsUrG0C4EE5tOlmHybYWXmsVaN3in1smnjEkTxPT9-yach3B5teqRfGtBFNjLwpLmvgoYdP_N4I3uO-dmKqTjDL_D7rv-bKp6p6gzyW-tCRYFTcq9BAyTMh2C5bS33rnoG-7rjaz96m19xTBy5-OxHim9vRg3U-aVis6NyVW-t0OXhjmvuSwd3JiNYbIZ9yXsF5Ru8-qqv8UY"/>
+</div>
+<h4 class="text-white text-sm font-light leading-relaxed mb-3 line-clamp-2">โฆษกกองทัพเรือเปิดเผยว่า ผู้บัญชาการทหารเรือได้ส่งข้อความด่วนถึงผู้บัญชาการทหารเรือโอมาน เพื่อแสดงความขอบคุณต่อการให้ความช่วยเหลือลูกเรือไทย จาก...</h4>
+<div class="flex items-center gap-4 text-gray-400 text-xs mt-auto">
+<span class="flex items-center gap-1"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg> 12.03.2569</span>
+<span class="flex items-center gap-1"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg> 59 Views</span>
+</div>
+</article>
+</div>
+</section>
+<!-- END: ImportantNews -->
+<!-- BEGIN: GeneralNews -->
+<section>
+<div class="flex justify-between items-center mb-8 border-b border-gray-700 pb-4">
+<h2 class="text-2xl font-medium text-white">ข่าวทั่วไป</h2>
+<a class="bg-gold-accent text-white px-4 py-1.5 rounded-full flex items-center gap-2 hover:bg-opacity-90 transition-all text-xs" href="#">
+              ดูทั้งหมด
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- News Card 3 -->
+<article class="flex flex-col group cursor-pointer">
+<div class="rounded-lg overflow-hidden mb-3 aspect-[16/9]">
+<img alt="News Image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6frDRN-7MuuUOHVFbGLLKzFot_8X7x1uiH4HT6waW9S0YI3DBR_lguxLi7KaX06qDg61RIfQKTL5M4VSlRlt5P1M-s3PS-iKWFEHWB5767Apqm1J7ebaDTVsHcEat4nECGKi9S3HLXxgKOb1IuWuUd0lRQnZsQuONIeOlNBiwvYgpnHlYWG7HKxDgQWIZD6bz_X392kWjUhTB3UZzESTPVFIarThOIUPEgwnPG2S0YqVpIyhLL4mgpGdrTmH9_hKeNligFt81tuE"/>
+</div>
+<h4 class="text-white text-sm font-light leading-relaxed mb-3 line-clamp-2">รองผู้บัญชาการโรงเรียนนายเรือเป็นประธานในพิธีส่งหมู่เรือฝึกนักเรียนนายเรือของนักเรียนนายเรือชั้นปีที่ ๑-๓ เดินทางไปฝึกภาคปฏิบัติในทะเลต่างประเทศ ประจำปีการ...</h4>
+<div class="flex items-center gap-4 text-gray-400 text-xs mt-auto">
+<span class="flex items-center gap-1"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg> 07.03.2569</span>
+<span class="flex items-center gap-1"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg> 67 Views</span>
+</div>
+</article>
+<!-- News Card 4 -->
+<article class="flex flex-col group cursor-pointer">
+<div class="rounded-lg overflow-hidden mb-3 aspect-[16/9]">
+<img alt="News Image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQXYPY8Y4BOW9bdR667MVHLa5ARsLZusy2z3ICaazceDmyKyEDlEl28SiYEApZ8rJw5QEQYqo8y_-1ZTfNG-kpOVpIjT_ApW1tUBhrepF5StmQB8X1JGgPpLR6_Vspgx4wiD9e86Vn1ByGiLwvve0rH-4alxbGWGKWkfigTZcSW1hWskSOSPMJ5HJ4s80QLEUG3DjXRuj1cySkPyBv9pa97O-P0nd_dA8It_aEwEFndbucbKUmLJhmht-M6ahS7RxH8BrvucuTMds"/>
+</div>
+<h4 class="text-white text-sm font-light leading-relaxed mb-3 line-clamp-2">ผู้บัญชาการกองพลนาวิกโยธินเป็นประธานร่วมกับกำลังพลมิตรประเทศในพิธีส่งมอบอาคารอเนกประสงค์ ภายใต้โครงการช่วยเหลือประชาชนในพื้นที่การฝึก Cobra Gold...</h4>
+<div class="flex items-center gap-4 text-gray-400 text-xs mt-auto">
+<span class="flex items-center gap-1"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg> 06.03.2569</span>
+<span class="flex items-center gap-1"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg> 40 Views</span>
+</div>
+</article>
+</div>
+</section>
+<!-- END: GeneralNews -->
+</div>
+</div>
+</main>
+<!-- END: MainContentGrid -->
+<!-- BEGIN: Footer -->
+<footer class="bg-gray-100 py-10 border-t border-gray-200" data-purpose="site-footer">
+<div class="container mx-auto px-4 text-center">
+<p class="text-gray-500 text-sm">© กองทัพเรือ - ROYAL THAI NAVY. สงวนลิขสิทธิ์</p>
+</div>
+</footer>
+<!-- END: Footer -->
+</body></html><!-- MISSING_IMAGES:
+- Thumbnail for Important News card 1
+- Thumbnail for Important News card 2
+- Thumbnail for General News card 1
+- Thumbnail for General News card 2
+-->

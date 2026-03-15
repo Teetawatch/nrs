@@ -10,12 +10,12 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <nav class="text-sm text-white/60 mb-4" aria-label="Breadcrumb">
                 <ol class="flex items-center gap-2">
-                    <li><a href="{{ route('home') }}" class="hover:text-white transition-colors cursor-pointer">หน้าแรก</a></li>
+                    <li><a href="{{ route('home') }}" class="hover:text-white transition-colors cursor-pointer" data-translate="breadcrumbHome">หน้าแรก</a></li>
                     <li aria-hidden="true"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></li>
-                    <li class="text-white font-medium">บุคลากร</li>
+                    <li class="text-white font-medium" data-translate="personnelPageTitle">บุคลากร</li>
                 </ol>
             </nav>
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold animate-fade-up">บุคลากร</h1>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold animate-fade-up" data-translate="personnelPageTitle">บุคลากร</h1>
             <p class="text-white/70 mt-3 text-lg animate-fade-up" style="animation-delay: 0.1s;">คณะครูและบุคลากรของโรงเรียน</p>
         </div>
     </div>
@@ -26,8 +26,8 @@
         @if($commanders->isNotEmpty())
         <section aria-labelledby="commanders-heading" data-aos="fade-up">
             <div class="text-center mb-12">
-                <div class="inline-block px-4 py-1.5 bg-accent/10 text-accent text-sm font-semibold rounded-full mb-3">ผู้บังคับบัญชา</div>
-                <h2 id="commanders-heading" class="text-2xl md:text-3xl font-bold text-slate-900">ผู้บริหารโรงเรียน</h2>
+                <div class="inline-block px-4 py-1.5 bg-accent/10 text-accent text-sm font-semibold rounded-full mb-3" data-translate="homeCommandersLabel">ผู้บังคับบัญชา</div>
+                <h2 id="commanders-heading" class="text-2xl md:text-3xl font-bold text-slate-900" data-translate="homeCommandersTitle">ผู้บริหารโรงเรียน</h2>
             </div>
             <div class="flex flex-wrap justify-center gap-10">
                 @foreach($commanders as $idx => $person)
@@ -51,7 +51,7 @@
         @if($unitHeads->isNotEmpty())
         <section aria-labelledby="unitheads-heading" data-aos="fade-up">
             <div class="text-center mb-12">
-                <div class="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-semibold rounded-full mb-3">หัวหน้าหน่วย</div>
+                <div class="inline-block px-4 py-1.5 text-sm font-semibold rounded-full mb-3" style="background-color: rgba(39, 69, 107, 0.1); color: #27456B;">หัวหน้าหน่วย</div>
                 <h2 id="unitheads-heading" class="text-2xl md:text-3xl font-bold text-slate-900">หัวหน้าหน่วยงาน</h2>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
@@ -93,7 +93,7 @@
         @empty
         <div class="text-center py-16 text-slate-400">
             <svg class="w-16 h-16 mx-auto mb-4 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-            <p class="text-lg">ยังไม่มีข้อมูลบุคลากร</p>
+            <p class="text-lg" data-translate="personnelPageTitle">ยังไม่มีข้อมูลบุคลากร</p>
         </div>
         @endforelse
     </div>

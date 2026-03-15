@@ -11,12 +11,12 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <nav class="text-sm text-white/60 mb-4" aria-label="Breadcrumb">
                 <ol class="flex items-center gap-2">
-                    <li><a href="{{ route('home') }}" class="hover:text-white transition-colors cursor-pointer">หน้าแรก</a></li>
+                    <li><a href="{{ route('home') }}" class="hover:text-white transition-colors cursor-pointer" data-translate="breadcrumbHome">หน้าแรก</a></li>
                     <li aria-hidden="true"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></li>
-                    <li class="text-white font-medium">ประวัติความเป็นมา</li>
+                    <li class="text-white font-medium" data-translate="aboutHistory">ประวัติความเป็นมา</li>
                 </ol>
             </nav>
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold animate-fade-up">ประวัติความเป็นมา</h1>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold animate-fade-up" data-translate="aboutHistory">ประวัติความเป็นมา</h1>
         </div>
     </div>
 
@@ -29,11 +29,11 @@
                 </div>
                 @endif
                 <div class="p-8">
-                    <h2 class="text-2xl font-bold text-primary mb-6 flex items-center gap-3">
+                    <h2 class="text-2xl font-bold mb-6 flex items-center gap-3" style="color: #27456B;">
                         <div class="w-1.5 h-7 rounded-full bg-gradient-to-b from-accent to-accent-light"></div>
                         {{ $history->title }}
                     </h2>
-                    <div class="prose prose-lg max-w-none text-slate-700 leading-relaxed [&>p]:mb-4 [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:text-primary [&>h2]:mt-8 [&>h2]:mb-4 [&>h3]:text-xl [&>h3]:font-bold [&>h3]:mt-6 [&>h3]:mb-3 [&>ul]:list-disc [&>ul]:pl-6 [&>ol]:list-decimal [&>ol]:pl-6 [&>img]:rounded-xl [&>img]:my-6">
+                    <div class="prose prose-lg max-w-none text-slate-700 leading-relaxed [&>p]:mb-4 [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:mt-8 [&>h2]:mb-4 [&>h3]:text-xl [&>h3]:font-bold [&>h3]:mt-6 [&>h3]:mb-3 [&>ul]:list-disc [&>ul]:pl-6 [&>ol]:list-decimal [&>ol]:pl-6 [&>img]:rounded-xl [&>img]:my-6 [&>h2]:text-[#27456B] [&>h3]:text-[#27456B]">
                         {!! $history->content !!}
                     </div>
                 </div>

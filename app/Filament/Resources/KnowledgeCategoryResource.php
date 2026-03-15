@@ -4,11 +4,13 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\KnowledgeCategoryResource\Pages;
 use App\Models\KnowledgeCategory;
+use App\Models\KnowledgeBase;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
 
 class KnowledgeCategoryResource extends Resource
 {
@@ -42,8 +44,48 @@ class KnowledgeCategoryResource extends Resource
                 Tables\Columns\TextColumn::make('order')->label('ลำดับ')->sortable(),
             ])
             ->reorderable('order')
-            ->actions([Tables\Actions\EditAction::make(), Tables\Actions\DeleteAction::make()])
-            ->bulkActions([Tables\Actions\BulkActionGroup::make([Tables\Actions\DeleteBulkAction::make()])]);
+            ->actions([
+                Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make()
+                    ->before(function (Tables\Actions\DeleteAction $action, KnowledgeCategory $record) {
+                        if ($record->knowledgeBases()->count() > 0) {
+                            $action->failure();
+                            $action->cancel();
+                            \Filament\Notifications\Notification::make()
+                                ->danger()
+                                ->title('ไม่สามารถลบหมวดหมู่นี้ได้')
+                                ->body("มี {$record->knowledgeBases()->count()} รายการความรู้ในหมวดหมู่นี้ กรุณาย้ายหรือลบรายการความรู้ก่อน")
+                                ->send();
+                        }
+                    }),
+            ])
+            ->bulkActions([
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make()
+                        ->before(function (Tables\Actions\DeleteBulkAction $action, \Illuminate\Support\Collection $records) {
+                            $categoriesWithItems = $records->filter(function (KnowledgeCategory $category) {
+                                return $category->knowledgeBases()->count() > 0;
+                            });
+                            
+                            if ($categoriesWithItems->isNotEmpty()) {
+                                $action->failure();
+                                $action->cancel();
+                                
+                                $message = "ไม่สามารถลบหมวดหมู่ต่อไปนี้ได้:\n";
+                                foreach ($categoriesWithItems as $category) {
+                                    $message .= "- {$category->name} (มี {$category->knowledgeBases()->count()} รายการความรู้)\n";
+                                }
+                                $message .= "\nกรุณาย้ายหรือลบรายการความรู้ก่อน";
+                                
+                                \Filament\Notifications\Notification::make()
+                                    ->danger()
+                                    ->title('ไม่สามารถลบหมวดหมู่ได้')
+                                    ->body($message)
+                                    ->send();
+                            }
+                        }),
+                ]),
+            ]);
     }
 
     public static function getPages(): array

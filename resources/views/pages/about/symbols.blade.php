@@ -10,12 +10,12 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <nav class="text-sm text-white/60 mb-4" aria-label="Breadcrumb">
                 <ol class="flex items-center gap-2">
-                    <li><a href="{{ route('home') }}" class="hover:text-white transition-colors cursor-pointer">หน้าแรก</a></li>
+                    <li><a href="{{ route('home') }}" class="hover:text-white transition-colors cursor-pointer" data-translate="breadcrumbHome">หน้าแรก</a></li>
                     <li aria-hidden="true"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></li>
-                    <li class="text-white font-medium">สัญลักษณ์สถานศึกษา</li>
+                    <li class="text-white font-medium" data-translate="aboutSymbols">สัญลักษณ์สถานศึกษา</li>
                 </ol>
             </nav>
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold animate-fade-up">สัญลักษณ์สถานศึกษา</h1>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold animate-fade-up" data-translate="aboutSymbols">สัญลักษณ์สถานศึกษา</h1>
         </div>
     </div>
 
@@ -31,7 +31,7 @@
                         </div>
                         @endif
                         <div class="{{ $symbol->image_url ? 'md:col-span-2' : 'md:col-span-3' }} p-8">
-                            <h2 class="text-2xl font-bold text-primary mb-3 flex items-center gap-3">
+                            <h2 class="text-2xl font-bold mb-3 flex items-center gap-3" style="color: #27456B;">
                                 <div class="w-1.5 h-7 rounded-full bg-gradient-to-b from-accent to-accent-light"></div>
                                 {{ $symbol->name }}
                             </h2>

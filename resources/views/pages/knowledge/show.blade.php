@@ -58,10 +58,11 @@
                         @endif
 
                         <div class="prose prose-lg max-w-none text-slate-700 leading-relaxed
-                            [&>p]:mb-4 [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:text-primary [&>h2]:mt-8 [&>h2]:mb-4
+                            [&>p]:mb-4 [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:mt-8 [&>h2]:mb-4
                             [&>h3]:text-xl [&>h3]:font-bold [&>h3]:mt-6 [&>h3]:mb-3
                             [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:mb-4 [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:mb-4
                             [&>li]:mb-1 [&>img]:rounded-xl [&>img]:my-6
+                            [&>h2]:text-[#27456B] [&>h3]:text-[#27456B]">
                             [&>blockquote]:border-l-4 [&>blockquote]:border-accent [&>blockquote]:pl-4 [&>blockquote]:italic [&>blockquote]:text-slate-600">
                             {!! $item->content !!}
                         </div>

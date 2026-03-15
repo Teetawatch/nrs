@@ -10,12 +10,12 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <nav class="text-sm text-white/60 mb-4" aria-label="Breadcrumb">
                 <ol class="flex items-center gap-2">
-                    <li><a href="{{ route('home') }}" class="hover:text-white transition-colors cursor-pointer">หน้าแรก</a></li>
+                    <li><a href="{{ route('home') }}" class="hover:text-white transition-colors cursor-pointer" data-translate="breadcrumbHome">หน้าแรก</a></li>
                     <li aria-hidden="true"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></li>
-                    <li class="text-white font-medium">ติดต่อเรา</li>
+                    <li class="text-white font-medium" data-translate="contact">ติดต่อเรา</li>
                 </ol>
             </nav>
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold animate-fade-up">ติดต่อเรา</h1>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold animate-fade-up" data-translate="contactPageTitle">ติดต่อเรา</h1>
             <p class="text-white/70 mt-3 text-lg animate-fade-up" style="animation-delay: 0.1s;">ติดต่อสอบถามข้อมูลหรือส่งข้อความถึงเรา</p>
         </div>
     </div>
@@ -34,9 +34,9 @@
             {{-- Contact Info --}}
             <div class="space-y-6" data-aos="fade-right">
                 <div>
-                    <h2 class="text-2xl font-bold text-primary mb-2 flex items-center gap-3">
+                    <h2 class="text-2xl font-bold mb-2 flex items-center gap-3" style="color: #27456B;">
                         <div class="w-1.5 h-7 rounded-full bg-gradient-to-b from-accent to-accent-light"></div>
-                        ข้อมูลติดต่อ
+                        <span data-translate="contactPageLabel">ข้อมูลติดต่อ</span>
                     </h2>
                     <p class="text-slate-600">ติดต่อเราได้ทางช่องทางต่าง ๆ ดังนี้</p>
                 </div>
@@ -100,9 +100,9 @@
             {{-- Contact Form --}}
             <div data-aos="fade-left">
                 <div class="bg-white rounded-2xl border border-slate-200/80 shadow-lg p-8">
-                    <h2 class="text-2xl font-bold text-primary mb-6 flex items-center gap-3">
+                    <h2 class="text-2xl font-bold mb-6 flex items-center gap-3" style="color: #27456B;">
                         <div class="w-1.5 h-7 rounded-full bg-gradient-to-b from-accent to-accent-light"></div>
-                        ส่งข้อความถึงเรา
+                        <span data-translate="contactFormTitle">ส่งข้อความถึงเรา</span>
                     </h2>
 
                     <form action="{{ route('contact.send') }}" method="POST" class="space-y-5" novalidate>
@@ -110,7 +110,7 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div>
                                 <label for="name" class="block text-sm font-medium text-slate-700 mb-1.5">
-                                    ชื่อ-นามสกุล <span class="text-red-500" aria-hidden="true">*</span>
+                                    <span data-translate="contactFormName">ชื่อ-นามสกุล</span> <span class="text-red-500" aria-hidden="true">*</span>
                                 </label>
                                 <input type="text" id="name" name="name" required
                                        value="{{ old('name') }}"
@@ -132,7 +132,7 @@
 
                         <div>
                             <label for="email" class="block text-sm font-medium text-slate-700 mb-1.5">
-                                อีเมล <span class="text-red-500" aria-hidden="true">*</span>
+                                <span data-translate="contactFormEmail">อีเมล</span> <span class="text-red-500" aria-hidden="true">*</span>
                             </label>
                             <input type="email" id="email" name="email" required
                                    value="{{ old('email') }}"
@@ -144,7 +144,7 @@
 
                         <div>
                             <label for="subject" class="block text-sm font-medium text-slate-700 mb-1.5">
-                                เรื่อง <span class="text-red-500" aria-hidden="true">*</span>
+                                <span data-translate="contactFormSubject">เรื่อง</span> <span class="text-red-500" aria-hidden="true">*</span>
                             </label>
                             <input type="text" id="subject" name="subject" required
                                    value="{{ old('subject') }}"
@@ -156,7 +156,7 @@
 
                         <div>
                             <label for="message" class="block text-sm font-medium text-slate-700 mb-1.5">
-                                ข้อความ <span class="text-red-500" aria-hidden="true">*</span>
+                                <span data-translate="contactFormMessage">ข้อความ</span> <span class="text-red-500" aria-hidden="true">*</span>
                             </label>
                             <textarea id="message" name="message" required rows="5"
                                       class="w-full px-4 py-2.5 rounded-xl border {{ $errors->has('message') ? 'border-red-400 bg-red-50' : 'border-slate-300' }} text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors resize-none"
@@ -169,7 +169,7 @@
                                 class="w-full px-6 py-3.5 bg-gradient-to-r from-accent to-accent-dark text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-accent/25 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2">
                             <span class="flex items-center justify-center gap-2">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
-                                ส่งข้อความ
+                                <span data-translate="contactFormSubmit">ส่งข้อความ</span>
                             </span>
                         </button>
                     </form>

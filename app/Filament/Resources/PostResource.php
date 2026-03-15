@@ -57,8 +57,16 @@ class PostResource extends Resource
                 Forms\Components\FileUpload::make('cover_image')
                     ->label('ภาพปก')
                     ->image()
+                    ->imagePreviewHeight('200')
+                    ->loadingIndicatorPosition('left')
+                    ->panelAspectRatio('16:9')
+                    ->panelLayout('integrated')
+                    ->removeUploadedFileButtonPosition('right')
+                    ->uploadButtonPosition('left')
+                    ->uploadProgressIndicatorPosition('left')
                     ->directory('posts')
-                    ->disk('public')
+                    ->disk('uploads')
+                    ->visibility('public')
                     ->columnSpanFull(),
 
                 Forms\Components\Textarea::make('excerpt')
@@ -75,6 +83,7 @@ class PostResource extends Resource
                         'blockquote', 'link', 'attachFiles', 'undo', 'redo',
                     ])
                     ->fileAttachmentsDirectory('posts/attachments')
+                    ->fileAttachmentsDisk('uploads')
                     ->columnSpanFull(),
             ])->columns(2),
         ]);
@@ -84,7 +93,7 @@ class PostResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('cover_image')->label('ภาพ')->width(60)->height(40),
+                Tables\Columns\ImageColumn::make('cover_image')->label('ภาพ')->width(60)->height(40)->disk('uploads'),
                 Tables\Columns\TextColumn::make('title')->label('หัวข้อ')->searchable()->limit(50),
                 Tables\Columns\TextColumn::make('category.name')->label('หมวดหมู่')->badge(),
                 Tables\Columns\TextColumn::make('status')
@@ -103,7 +112,7 @@ class PostResource extends Resource
                     ->options(PostCategory::pluck('name', 'id'))
                     ->label('หมวดหมู่'),
             ])
-            ->actions([Tables\Actions\EditAction::make(), Tables\Actions\DeleteAction::make()])
+            ->actions([Tables\Actions\ViewAction::make(), Tables\Actions\EditAction::make(), Tables\Actions\DeleteAction::make()])
             ->bulkActions([Tables\Actions\BulkActionGroup::make([Tables\Actions\DeleteBulkAction::make()])])
             ->defaultSort('created_at', 'desc');
     }
@@ -113,6 +122,7 @@ class PostResource extends Resource
         return [
             'index'  => Pages\ListPosts::route('/'),
             'create' => Pages\CreatePost::route('/create'),
+            'view'   => Pages\ViewPost::route('/{record}'),
             'edit'   => Pages\EditPost::route('/{record}/edit'),
         ];
     }

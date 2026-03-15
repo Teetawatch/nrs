@@ -10,6 +10,23 @@
     th, td { @apply font-sans; }
 }
 
+@layer utilities {
+    .hero-zoom-in {
+        animation: heroZoom 6s ease-out forwards;
+    }
+    @keyframes heroZoom {
+        from { transform: scale(1.04); }
+        to   { transform: scale(1); }
+    }
+    .hero-progress-bar {
+        animation: heroProgress 6s linear forwards;
+    }
+    @keyframes heroProgress {
+        from { width: 0%; }
+        to   { width: 100%; }
+    }
+}
+
 @layer components {
     .btn-primary {
         @apply inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;

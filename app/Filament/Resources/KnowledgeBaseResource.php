@@ -61,12 +61,12 @@ class KnowledgeBaseResource extends Resource
                 Tables\Columns\TextColumn::make('type')
                     ->label('ประเภท')
                     ->badge()
-                    ->formatStateUsing(fn ($s) => match ($s) { 'article' => 'บทความ', 'video' => 'วิดีโอ', 'link' => 'ลิงก์', default => 'ไฟล์' }),
+                    ->formatStateUsing(fn ($state) => match ($state) { 'article' => 'บทความ', 'video' => 'วิดีโอ', 'link' => 'ลิงก์', default => 'ไฟล์' }),
                 Tables\Columns\TextColumn::make('status')
                     ->label('สถานะ')
                     ->badge()
-                    ->color(fn ($s) => match ($s) { 'published' => 'success', default => 'warning' })
-                    ->formatStateUsing(fn ($s) => $s === 'published' ? 'เผยแพร่' : 'แบบร่าง'),
+                    ->color(fn ($state) => match ($state) { 'published' => 'success', default => 'warning' })
+                    ->formatStateUsing(fn ($state) => $state === 'published' ? 'เผยแพร่' : 'แบบร่าง'),
                 Tables\Columns\TextColumn::make('view_count')->label('ผู้ชม')->sortable(),
             ])
             ->filters([

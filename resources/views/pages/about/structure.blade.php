@@ -10,12 +10,12 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <nav class="text-sm text-white/60 mb-4" aria-label="Breadcrumb">
                 <ol class="flex items-center gap-2">
-                    <li><a href="{{ route('home') }}" class="hover:text-white transition-colors cursor-pointer">หน้าแรก</a></li>
+                    <li><a href="{{ route('home') }}" class="hover:text-white transition-colors cursor-pointer" data-translate="breadcrumbHome">หน้าแรก</a></li>
                     <li aria-hidden="true"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></li>
-                    <li class="text-white font-medium">โครงสร้างหน่วย</li>
+                    <li class="text-white font-medium" data-translate="aboutStructure">โครงสร้างหน่วย</li>
                 </ol>
             </nav>
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold animate-fade-up">โครงสร้างหน่วย</h1>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold animate-fade-up" data-translate="aboutStructure">โครงสร้างหน่วย</h1>
             <p class="text-white/70 mt-3 text-lg animate-fade-up" style="animation-delay: 0.1s;">โครงสร้างการจัดหน่วยงานของโรงเรียน</p>
         </div>
     </div>

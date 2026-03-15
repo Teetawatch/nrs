@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Storage;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
@@ -41,7 +42,7 @@ class Post extends Model
     public function getCoverImageUrlAttribute(): ?string
     {
         if (!$this->cover_image) return null;
-        return asset($this->cover_image);
+        return asset('uploads/' . $this->cover_image);
     }
 
     public function scopePublished($query)

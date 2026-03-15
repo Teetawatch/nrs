@@ -60,7 +60,7 @@
 
                 <div class="md:col-span-2 p-8">
                     @if($person->bio)
-                    <h3 class="text-lg font-bold text-primary mb-4 flex items-center gap-2">
+                    <h3 class="text-lg font-bold mb-4 flex items-center gap-2" style="color: #27456B;">
                         <div class="w-1 h-5 rounded-full bg-accent"></div>
                         ประวัติ
                     </h3>

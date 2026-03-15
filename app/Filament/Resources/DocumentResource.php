@@ -54,7 +54,7 @@ class DocumentResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('title')->label('ชื่อเอกสาร')->searchable()->limit(50),
                 Tables\Columns\TextColumn::make('category.name')->label('หมวดหมู่')->badge(),
-                Tables\Columns\TextColumn::make('file_type')->label('ประเภท')->badge()->formatStateUsing(fn ($s) => strtoupper($s)),
+                Tables\Columns\TextColumn::make('file_type')->label('ประเภท')->badge()->formatStateUsing(fn ($state) => strtoupper($state)),
                 Tables\Columns\TextColumn::make('year')->label('ปี'),
                 Tables\Columns\TextColumn::make('download_count')->label('ดาวน์โหลด')->sortable(),
                 Tables\Columns\ToggleColumn::make('is_active')->label('เปิดใช้งาน'),

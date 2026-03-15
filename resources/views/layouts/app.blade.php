@@ -200,6 +200,9 @@
         });
     </script>
 
+    {{-- Translations --}}
+    <script src="{{ asset('js/translations.js') }}"></script>
+
     @stack('scripts')
 </body>
 </html>

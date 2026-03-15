@@ -10,12 +10,12 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <nav class="text-sm text-white/60 mb-4" aria-label="Breadcrumb">
                 <ol class="flex items-center gap-2">
-                    <li><a href="{{ route('home') }}" class="hover:text-white transition-colors cursor-pointer">หน้าแรก</a></li>
+                    <li><a href="{{ route('home') }}" class="hover:text-white transition-colors cursor-pointer" data-translate="breadcrumbHome">หน้าแรก</a></li>
                     <li aria-hidden="true"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></li>
-                    <li class="text-white font-medium">เอกสาร</li>
+                    <li class="text-white font-medium" data-translate="documents">เอกสาร</li>
                 </ol>
             </nav>
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold animate-fade-up">เอกสาร</h1>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold animate-fade-up" data-translate="documentsPageTitle">เอกสาร</h1>
             <p class="text-white/70 mt-3 text-lg animate-fade-up" style="animation-delay: 0.1s;">ดาวน์โหลดเอกสารและแบบฟอร์มต่าง ๆ ของโรงเรียน</p>
         </div>
     </div>
@@ -41,7 +41,7 @@
                 <table class="w-full text-sm" role="table">
                     <thead>
                         <tr class="border-b border-slate-200 bg-gradient-to-r from-slate-50 to-white">
-                            <th class="text-left px-6 py-3.5 font-semibold text-slate-700" scope="col">ชื่อเอกสาร</th>
+                            <th class="text-left px-6 py-3.5 font-semibold text-slate-700" scope="col" data-translate="documentsPageTitle">ชื่อเอกสาร</th>
                             <th class="text-left px-4 py-3.5 font-semibold text-slate-700 hidden md:table-cell" scope="col">ประเภท</th>
                             <th class="text-left px-4 py-3.5 font-semibold text-slate-700 hidden md:table-cell" scope="col">ขนาด</th>
                             <th class="text-left px-4 py-3.5 font-semibold text-slate-700 hidden sm:table-cell" scope="col">ดาวน์โหลด</th>
@@ -81,7 +81,7 @@
                                    class="inline-flex items-center gap-1.5 px-4 py-2 bg-accent text-white text-xs font-semibold rounded-lg hover:bg-accent-dark transition-all duration-200 cursor-pointer hover:shadow-md hover:shadow-accent/20 hover:-translate-y-0.5"
                                    aria-label="ดาวน์โหลด {{ $doc->title }}">
                                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                                    ดาวน์โหลด
+                                    <span data-translate="documentsDownload">ดาวน์โหลด</span>
                                 </a>
                             </td>
                         </tr>
@@ -94,7 +94,7 @@
         @empty
         <div class="text-center py-20 text-slate-400">
             <svg class="w-16 h-16 mx-auto mb-4 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-            <p class="text-lg">ยังไม่มีเอกสาร</p>
+            <p class="text-lg" data-translate="documentsNoResult">ยังไม่มีเอกสาร</p>
         </div>
         @endforelse
     </div>

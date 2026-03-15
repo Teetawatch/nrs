@@ -10,12 +10,12 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <nav class="text-sm text-white/60 mb-4" aria-label="Breadcrumb">
                 <ol class="flex items-center gap-2">
-                    <li><a href="{{ route('home') }}" class="hover:text-white transition-colors cursor-pointer">หน้าแรก</a></li>
+                    <li><a href="{{ route('home') }}" class="hover:text-white transition-colors cursor-pointer" data-translate="breadcrumbHome">หน้าแรก</a></li>
                     <li aria-hidden="true"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></li>
-                    <li class="text-white font-medium">รวมระบบงาน</li>
+                    <li class="text-white font-medium" data-translate="systems">รวมระบบงาน</li>
                 </ol>
             </nav>
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold animate-fade-up">รวมระบบงานออนไลน์</h1>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold animate-fade-up" data-translate="homeSystemsTitle">รวมระบบงานออนไลน์</h1>
             <p class="text-white/70 mt-3 text-lg animate-fade-up" style="animation-delay: 0.1s;">เข้าถึงระบบงานและบริการออนไลน์ต่าง ๆ ของโรงเรียน</p>
         </div>
     </div>
@@ -44,7 +44,7 @@
             @if($categories->isNotEmpty())
             <div class="flex items-center gap-3 mb-6">
                 <div class="w-1 h-7 rounded-full bg-slate-400"></div>
-                <h2 id="other-systems" class="text-xl font-bold text-slate-900">ระบบงานอื่น ๆ</h2>
+                <h2 id="other-systems" class="text-xl font-bold text-slate-900" data-translate="homeSystemsTitle">ระบบงานอื่น ๆ</h2>
             </div>
             @endif
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
@@ -58,7 +58,7 @@
         @if($categories->isEmpty() && $uncategorized->isEmpty())
         <div class="text-center py-20 text-slate-400">
             <svg class="w-16 h-16 mx-auto mb-4 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
-            <p class="text-lg">ยังไม่มีระบบงาน</p>
+            <p class="text-lg" data-translate="systemsNoResult">ยังไม่มีระบบงาน</p>
         </div>
         @endif
     </div>
