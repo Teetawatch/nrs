@@ -28,9 +28,8 @@
      x-transition:leave-end="opacity-0 transform -translate-y-full"
      class="relative z-40 overflow-hidden min-h-[48px]">
 
-    {{-- Animated background --}}
-    <div class="absolute inset-0 bg-gradient-to-r from-[#0f2444] via-[#1E3A5F] to-[#163052]"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.03] to-transparent animate-pulse"></div>
+    {{-- Solid background --}}
+    <div class="absolute inset-0 bg-[#1E3A5F]"></div>
 
     @foreach($announcements as $i => $ann)
     @php
@@ -129,7 +128,7 @@
     </div>
     @endforeach
 
-    {{-- Bottom shimmer line --}}
-    <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+    {{-- Bottom border --}}
+    <div class="absolute bottom-0 left-0 right-0 h-px bg-white/20"></div>
 </div>
 @endif
